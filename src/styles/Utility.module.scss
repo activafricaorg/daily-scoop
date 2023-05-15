@@ -1,0 +1,17 @@
+.grid {
+	display: grid;
+
+	&Heading {
+		grid-template-columns: repeat(2, 50%);
+	}
+
+	&Content {
+		grid-template-columns: repeat(3, calc((100% / 3) - 10px));
+		grid-gap: 15px;
+	}
+
+	&Article {
+		grid-template-columns: 160px calc(100% - 160px - 15px);
+		grid-gap: 15px;
+	}
+}

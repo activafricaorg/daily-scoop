@@ -1,0 +1,16 @@
+.container {
+	border-bottom: 4px solid rgb(65, 65, 65);
+	padding: 10px 0 30px;
+}
+
+.heading {
+	font-family: "mallory", serif;
+	font-size: 0.95rem;
+	display: grid;
+	padding: 0 0 20px;
+	text-transform: uppercase;
+
+	a {
+		text-align: right;
+	}
+}

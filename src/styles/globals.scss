@@ -1,9 +1,7 @@
-:root {}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+:root {
+  --sp: 1.5rem;
+  --darkgray: rgba(40, 40, 40, 1);
+  --light-grey: rgb(255, 255, 255);;
 }
 
 * {
@@ -18,11 +16,26 @@ body {
   overflow-x: hidden;
 }
 
-body {
-
+html {
+  font: 100%/1.5 "IBM Plex Serif",serif;
+  padding: var(--sp);
+  background-color: var(--darkgray);
+  color: var(--light-grey);
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+main {
+  width: 75rem;
+  margin: 0 auto;
+}
+
+header {
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  padding-top: 0;
+  border-bottom: 2px solid rgb(56, 56, 56);
 }

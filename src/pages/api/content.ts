@@ -19,9 +19,9 @@ export default async function handler( req: NextApiRequest, res: NextApiResponse
   // const feed = await parser.parseURL('https://notjustok.com/category/news/feed/');
   // console.log(feed.title);
   // console.log(feed.title); // feed will have a `foo` property, type as a string
-  //
+
   // feed.items.forEach(item => {
-  //   console.log(item.content) // item will have a `bar` property type as a number
+  //   console.log(item.link) // item will have a `bar` property type as a number
   // });
 
   res.status(200).json({ name: 'John Doe' })

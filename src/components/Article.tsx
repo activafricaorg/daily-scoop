@@ -14,10 +14,10 @@ interface ArticlePropTypes {
 const Article = ({title, link, image, date, time}: ArticlePropTypes) => {
 	return (
 		<Link href={link} className={`${UtilityStyles.grid} ${UtilityStyles.gridArticle}`}>
-			<Image src={image} alt={title} width={160} height={90} />
+			{/*<Image src={image} alt={title} width={160} height={90} />*/}
 			<div>
+				<div className={ArticleStyles.dateTime}>{`${date}`}</div>
 				<h3 className={ArticleStyles.title}>{title}</h3>
-				<div className={ArticleStyles.dateTime}>{`${date} ${time}`}</div>
 			</div>
 		</Link>
 	)

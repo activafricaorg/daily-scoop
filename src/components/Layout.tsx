@@ -6,14 +6,15 @@ const Layout = () => {
 		{ name: "News", slug: "news", description: "News curated by Daily Scoop Africa" },
 		{ name: "Technology", slug: "tech", description: "Technology News curated by Daily Scoop Africa" },
 		{ name: "Entertainment", slug: "entertainment", description: "Entertainment News curated by Daily Scoop Africa" },
+		{ name: "Sports", slug: "entertainment", description: "Entertainment News curated by Daily Scoop Africa" },
 	];
 
 	return (
-		<div>
+		<>
 			{ categories.map((category, index) => (
 				<Category key={index} data={category} />
 			))}
-		</div>
+		</>
 	)
 }
 

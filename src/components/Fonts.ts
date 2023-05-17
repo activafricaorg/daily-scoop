@@ -11,6 +11,11 @@ export const IbmPlexSerif = IBM_Plex_Serif({
 export const Mallory = localFont({
 	src: [
 		{
+			path: './../../public/fonts/Mallory_Light.woff2',
+			weight: '300',
+			style: 'normal',
+		},
+		{
 			path: './../../public/fonts/Mallory_Book.woff2',
 			weight: '400',
 			style: 'normal',

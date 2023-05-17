@@ -22,8 +22,8 @@ html {
   padding: var(--sp);
   background-color: var(--darkgray);
   color: var(--light-grey);
-  //-webkit-font-smoothing: antialiased;
-  //-moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {

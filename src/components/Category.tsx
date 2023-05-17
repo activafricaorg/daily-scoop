@@ -19,7 +19,10 @@ const Category = ({ data }: CategoryPropTypes) => {
 		<section className={`${categoryStyles.container} ${utilityStyles.grid} ${utilityStyles.gridCategory}`}>
 			<div>
 				<header className={categoryStyles.title}>
-					<h2><Link href={`/${data.slug}`}>{data.name}</Link></h2>
+					<h2>
+						<Link href={`/${data.slug}`}>{data.name}</Link>
+						<span className={categoryStyles.tagline}>{data.description}</span>
+					</h2>
 				</header>
 				<style jsx global>{`h2 { font-family: ${IbmPlexSerif.style.fontFamily}; }`}</style>
 			</div>
@@ -217,20 +220,6 @@ const Category = ({ data }: CategoryPropTypes) => {
 					title="Title 42: What Its End Means for Immigration and the Southern Border"
 					link="https://www.wsj.com/video/watch-donald-trump-anchor-kaitlan-collins-spar-at-cnn-town-hall/E466C68C-0418-4659-ADBC-1FED92C8A2FB.html"
 					image="https://images.wsj.net/im-776973?width=167&height=94"
-					date="5/11/2023"
-					time="1:100AM"
-				/>
-				<Article
-					title="Pentagon to Send 1,500 Troops to Mexico Border as Title 42 Ends"
-					link="https://www.wsj.com/video/watch-donald-trump-anchor-kaitlan-collins-spar-at-cnn-town-hall/E466C68C-0418-4659-ADBC-1FED92C8A2FB.html"
-					image="https://images.wsj.net/im-779867?width=640&height=360"
-					date="5/11/2023"
-					time="1:100AM"
-				/>
-				<Article
-					title="Pentagon to Send 1,500 Troops to Mexico Border as Title 42 Ends"
-					link="https://www.wsj.com/video/watch-donald-trump-anchor-kaitlan-collins-spar-at-cnn-town-hall/E466C68C-0418-4659-ADBC-1FED92C8A2FB.html"
-					image="https://images.wsj.net/im-779867?width=640&height=360"
 					date="5/11/2023"
 					time="1:100AM"
 				/>

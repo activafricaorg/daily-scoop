@@ -9,21 +9,28 @@ interface ArticlePropTypes {
 	link: string,
 	image: string,
 	date: string,
-	time: string
+	time: string,
+	source: string
 }
 
-const Article = ({title, link, image, date, time}: ArticlePropTypes) => {
+const Article = ({title, link, image, date, time, source}: ArticlePropTypes) => {
 	return (
 		<div className={ArticleStyles.singleArticle}>
 			<Link href={link}>
-				{/*<Image src={image} alt={title} width={160} height={90} />*/}
 				<div className={ArticleStyles.imagePlaceholder}>
 					<Image fill src={image} alt={title} sizes="100vw" loading="lazy" />
 				</div>
-				<h3 className={ArticleStyles.title}>{title}</h3>
-				<div className={`dateTime ${ArticleStyles.dateTime}`}>
-					{`${date}`}
-					<style jsx global>{`.dateTime { font-family: ${Mallory.style.fontFamily}; font-weight: 400}`}</style>
+				<div className={ArticleStyles.details}>
+					<h3 className={ArticleStyles.title}>{title}</h3>
+					<div className={ArticleStyles.meta}>
+						<div className={`dateTime ${ArticleStyles.dateTime}`}>
+							{`${date}`}
+							<style jsx global>{`.dateTime { font-family: ${Mallory.style.fontFamily}; font-weight: 700; font-size: 0.65rem}`}</style>
+						</div>
+						<div className={ArticleStyles.source}>
+							{`${source}`}
+						</div>
+					</div>
 				</div>
 			</Link>
 		</div>

@@ -1,22 +1,22 @@
 import Article from "@/components/Article";
-import categoryStyles from "@/styles/Category.module.scss";
+import contentStyles from "@/styles/Content.module.scss";
 import utilityStyles from "@/styles/Utility.module.scss";
 import Link from "next/link";
 
-interface CategoryTypes {
+interface ContentTypes {
 	name: string,
 	slug: string,
 	description: string
 }
 
-interface CategoryPropTypes {
-	data: CategoryTypes
+interface ContentPropTypes {
+	data: ContentTypes
 }
 
-const Category = ({ data }: CategoryPropTypes) => {
+const Content = ({ data }: ContentPropTypes) => {
 	return (
-		<section className={`${categoryStyles.container}`}>
-			<header className={categoryStyles.title}>
+		<section className={`${contentStyles.container}`}>
+			<header className={contentStyles.title}>
 				<h2>
 					<Link href={`/${data.slug}`}>{data.name}</Link>
 				</h2>
@@ -251,6 +251,6 @@ const Category = ({ data }: CategoryPropTypes) => {
 	)
 }
 
-export default Category;
+export default Content;
 
 

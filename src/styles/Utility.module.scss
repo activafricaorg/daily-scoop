@@ -2,13 +2,11 @@
 	display: grid;
 
 	&Content {
-		grid-gap: calc(0.5rem * 2 + 1px);
+		grid-gap: calc(0.25rem * 2 + 1px);
 		grid-template-columns: repeat(4, 1fr);
-		padding: 1rem;
-		border-radius: 0 10px 10px 10px;
-		// background: linear-gradient(0deg, #f4eae5, #f9da9f);
-		background-color: white;
-		border: 1px solid #dfdfdf;
+		padding: calc(0.25rem * 2 + 1px);
+		border-radius: 10px;
+		background-color: #f1efee;
 	}
 
 	&Category {

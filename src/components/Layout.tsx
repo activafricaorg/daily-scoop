@@ -1,19 +1,25 @@
-import Category from "@/components/Category";
-import React from "react";
+import React, { useState } from "react";
+import Heading from "@/components/Heading";
+import contentStyles from "@/styles/Category.module.scss";
+import Head from "next/head";
+import styles from "@/styles/Home.module.scss";
 
-const Layout = () => {
-	const categories = [
-		{ name: "News", slug: "news", description: "News curated by Daily Scoop Africa" },
-		{ name: "Technology", slug: "tech", description: "Technology News curated by Daily Scoop Africa" },
-		{ name: "Entertainment", slug: "entertainment", description: "Entertainment News curated by Daily Scoop Africa" },
-		{ name: "Sports", slug: "entertainment", description: "Entertainment News curated by Daily Scoop Africa" },
-	];
+interface LayoutProps {
+	children: string | JSX.Element | JSX.Element[]
+}
 
+const Layout = ({children} : LayoutProps) => {
 	return (
 		<>
-			{ categories.map((category, index) => (
-				<Category key={index} data={category} />
-			))}
+			<main className={styles.main}>
+				<header>
+					<h1>Daily Scoop</h1>
+				</header>
+				<section className={`${contentStyles.container}`}>
+					<Heading />
+					{ children }
+				</section>
+			</main>
 		</>
 	)
 }

@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Layout from "@/components/Layout";
-import styles from '@/styles/Home.module.scss';
 import React from "react";
 
 export default function Home() {

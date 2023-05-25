@@ -7,6 +7,6 @@ module.exports = {
     includePaths: [path.join(__dirname, 'styles')],
   },
   images: {
-    domains: ['images.wsj.net'],
+    domains: ['img.icons8.com', 'images.wsj.net'],
   }
 };

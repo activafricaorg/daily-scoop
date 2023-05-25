@@ -2,7 +2,6 @@ import { useRouter } from "next/router";
 import Layout from "@/components/Layout";
 import Head from "next/head";
 import React from "react";
-import contentStyles from "@/styles/Category.module.scss";
 import utilityStyles from "@/styles/Utility.module.scss";
 import Article from "@/components/Article";
 

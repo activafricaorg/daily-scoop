@@ -6,8 +6,7 @@
 		grid-gap: calc(0.25rem * 2 + 1px);
 		padding: calc(0.25rem * 2 + 1px);
 		border-radius: 0 5px 5px 5px;
-		background-color: #2f3437;
-		border: 1px solid #4d4d4d;
+		background-color: #212426;
 	}
 
 	&Category {
@@ -16,6 +15,6 @@
 	}
 
 	&Heading {
-		grid-template-columns: repeat(4, max-content);
+		grid-template-columns: repeat(5, max-content);
 	}
 }

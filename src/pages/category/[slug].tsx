@@ -1,8 +1,8 @@
+import React from "react";
+import utilityStyles from "@/styles/Utility.module.scss";
 import { useRouter } from "next/router";
 import Layout from "@/components/Layout";
 import Head from "next/head";
-import React from "react";
-import utilityStyles from "@/styles/Utility.module.scss";
 import Article from "@/components/Article";
 
 const Page = () => {
@@ -10,7 +10,7 @@ const Page = () => {
 	return (
 		<Layout>
 			<Head>
-				<title>{ router.query.slug } Daily Scoop Africa</title>
+				<title>Daily Scoop Africa`</title>
 				<meta name="description" content="Daily scoop of entertainment, business, technology, and sport news" />
 			</Head>
 			<div className={`${utilityStyles.grid} ${utilityStyles.gridContent}`}>

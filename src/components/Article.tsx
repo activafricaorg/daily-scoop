@@ -1,33 +1,34 @@
 import Link from "next/link";
-import Image from "next/image";
+import moment from "moment";
 import ArticleStyles from "@/styles/Article.module.scss";
-import UtilityStyles from "@/styles/Utility.module.scss"
-import { Mallory} from "@/components/Fonts";
+import Image from "next/image";
 
 interface ArticlePropTypes {
 	title: string,
 	link: string,
 	image: string,
 	date: string,
-	time: string,
 	source: string
+	sourceImage: string,
 }
 
-const Article = ({title, link, image, date, time, source}: ArticlePropTypes) => {
+const Article = ({title, link, image, date, source, sourceImage}: ArticlePropTypes) => {
+	const publisherLogo = sourceImage.split("http").length > 1 ? sourceImage : `${sourceImage}`;
+	const realDate = moment(date).format('YYYY-MM-DD');
+
 	return (
 		<div className={ArticleStyles.singleArticle}>
-			<Link href={link}>
-				<div className={ArticleStyles.imagePlaceholder}>
-					<Image fill src={image} alt={title} sizes="100vw" loading="lazy" />
-				</div>
+			<Link href={link} target="_blank">
+				<div className={ArticleStyles.imagePlaceholder} style={{ backgroundImage: `url(${image})`, backgroundSize: "cover" }}/>
 				<div className={ArticleStyles.details}>
 					<h3 className={ArticleStyles.title}>{title}</h3>
 					<div className={ArticleStyles.meta}>
 						<div className={ArticleStyles.source}>
-							{`${source}`}
+							<Image className={ArticleStyles.sourceImage} src={publisherLogo} width={20} height={20} alt={source} />
+							{source}
 						</div>
 						<div className={`dateTime ${ArticleStyles.dateTime}`}>
-							{`${date}`}
+							{realDate}
 						</div>
 					</div>
 				</div>

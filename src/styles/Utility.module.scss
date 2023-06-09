@@ -4,7 +4,6 @@
 	&Content {
 		grid-template-columns: repeat(3, 1fr);
 		grid-gap: calc(0.5rem * 2 + 1px);
-		padding: calc(0.5rem * 2 + 1px);
 		border-radius: 0 5px 5px 5px;
 	}
 
@@ -13,7 +12,8 @@
 		grid-gap: 30px;
 	}
 
-	&Heading {
-		grid-template-columns: repeat(5, max-content);
+	&Main {
+		grid-template-columns: 250px calc(100% - 250px - 1.5rem);
+		grid-gap: 1.5rem;
 	}
 }

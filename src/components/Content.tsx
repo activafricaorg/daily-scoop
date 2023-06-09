@@ -238,14 +238,6 @@ const Content = ({ data }: ContentPropTypes) => {
 					time="1:100AM"
 					source="Techcabal"
 				/>
-				<Article
-					title="Title 42: What Its End Means for Immigration and the Southern Border"
-					link="https://www.wsj.com/video/watch-donald-trump-anchor-kaitlan-collins-spar-at-cnn-town-hall/E466C68C-0418-4659-ADBC-1FED92C8A2FB.html"
-					image="https://images.wsj.net/im-776973?width=167&height=94"
-					date="5/11/2023"
-					time="1:100AM"
-					source="Techcabal"
-				/>
 			</div>
 		</section>
 	)

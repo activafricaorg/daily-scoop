@@ -1,27 +1,33 @@
 .title {
-	font-size: 1.4em;
-	font-weight: 500;
+	font-family: "PolySans Bulky", serif;
+	letter-spacing: .01em;
+	min-height: 70px;
+	font-size: 1.3em;
 	line-height: 1.1;
 	margin-bottom: 5px;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
 }
 
 .imagePlaceholder {
-	position: relative;
+	height: 200px;
 	width: 100%;
-	height: 150px;
 }
 
 .singleArticle {
 	border-radius: 5px;
 	overflow: hidden;
-	border: 1px solid #393939;
+	border: 1px solid rgb(49 49 49);
 	background-color: transparent;
 	color: white;
 
 	a {
 		&:hover {
 			.title {
-				color: var(--theme-color);
+				text-decoration: underline;
+				text-decoration-color: var(--theme-color);
 			}
 		}
 	}
@@ -32,13 +38,33 @@
 }
 
 .meta {
-	font-size: .8rem;
-	font-weight: 700;
-	color: var(--theme-grey);
+	font-size: .7rem;
+	font-weight: 500;
 	display: flex;
+	align-items: center;
+	justify-content: space-between;
 	margin-top: 15px;
+}
 
-	.source {
-		margin-right: 10px;
-	}
+.source {
+	font-family: "PolySans", serif;
+	font-style: italic;
+	margin-right: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-radius: 20px;
+	padding: 3px 9px 3px 3px;
+	border: 1px solid rgb(49 49 49);
+}
+
+.dateTime {
+	color: rgb(148 148 148);
+	font-family: "PolySans Neutral", serif;
+}
+
+.sourceImage {
+	border: 1px solid rgb(49 49 49);
+	border-radius: 20px;
+	margin-right: 5px;
 }

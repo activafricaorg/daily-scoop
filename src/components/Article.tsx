@@ -23,12 +23,11 @@ const Article = ({title, link, image, date, time, source}: ArticlePropTypes) => 
 				<div className={ArticleStyles.details}>
 					<h3 className={ArticleStyles.title}>{title}</h3>
 					<div className={ArticleStyles.meta}>
-						<div className={`dateTime ${ArticleStyles.dateTime}`}>
-							{`${date}`}
-							<style jsx global>{`.dateTime { font-family: ${Mallory.style.fontFamily}; font-weight: 700; font-size: 0.65rem}`}</style>
-						</div>
 						<div className={ArticleStyles.source}>
 							{`${source}`}
+						</div>
+						<div className={`dateTime ${ArticleStyles.dateTime}`}>
+							{`${date}`}
 						</div>
 					</div>
 				</div>

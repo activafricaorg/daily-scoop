@@ -1,7 +1,9 @@
 :root {
   --sp: 1.5rem;
-  --darkgray: #2f3437;
-  --light-grey: white;
+  --dark-theme: #141414;
+  --text-color: white;
+  --theme-color: #5cd4ae;
+  --theme-grey: #797979;
 }
 
 * {
@@ -18,10 +20,10 @@ body {
 }
 
 html {
-  font: 100%/1.5 "Acta",serif;
+  font: 100%/1.5 "PolySans",serif;
+  color: var(--text-color);
+  background-color: var(--dark-theme);
   padding: var(--sp);
-  background-color: var(--darkgray);
-  color: var(--light-grey);
   -webkit-font-smoothing: subpixel-antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -32,7 +34,7 @@ a {
 }
 
 main {
-  width: 65rem;
+  width: 60rem;
   margin: 0 auto;
 }
 

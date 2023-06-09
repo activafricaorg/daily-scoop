@@ -5,7 +5,7 @@ import { Mallory } from "@/components/Fonts";
 export default function App({ Component, pageProps }: AppProps) {
     return (
         <>
-            <style jsx global>{`html { font-family: ${Mallory.style.fontFamily}; }`}</style>
+            {/*<style jsx global>{`html { font-family: ${Mallory.style.fontFamily}; }`}</style>*/}
             <Component {...pageProps} />
         </>
     )

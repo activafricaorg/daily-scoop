@@ -1,11 +1,11 @@
 import React from "react";
+import { GetStaticPaths, GetStaticProps } from "next";
 import utilityStyles from "@/styles/Utility.module.scss";
 import categoryStyles from "@/styles/Category.module.scss";
-import { useRouter } from "next/router";
 import Layout from "@/components/Layout";
 import Head from "next/head";
 import Article from "@/components/Article";
-import { GetStaticPaths, GetStaticProps } from "next";
+import Heading from "@/components/Heading";
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	return {
@@ -23,7 +23,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async({ params }) => {
 	const res = await fetch(`${process.env.SERVER_HOST}/category/${params?.slug}`);
 	const category = await res.json();
-	return { props: { category } }
+	return {props: { category }}
 }
 
 const Page = ({ category }) => {
@@ -33,26 +33,30 @@ const Page = ({ category }) => {
 				<title>Daily Scoop Africa</title>
 				<meta name="description" content="Daily scoop of entertainment, business, technology, and sport news" />
 			</Head>
-			<div className={ categoryStyles.title }>
-				<h1>{category?.name}</h1>
-				<p>{category?.description}</p>
+			<Heading currentCategory={category?.slug}/>
+			<div className={`${utilityStyles.grid}`}>
+				<div className={ categoryStyles.title }>
+					<h1>{category?.name}</h1>
+					<p>{category?.description}</p>
+				</div>
+				<div className={`${utilityStyles.grid} ${utilityStyles.gridContent}`}>
+					{
+						category?.articles
+							.map((article, index) => (
+								<Article
+									key={index}
+									title={article.title}
+									link={article.url}
+									image={article.image}
+									date={article.updatedAt}
+									source={ article.source }
+									sourceImage={article.sourceImage}
+								/>
+							))
+					}
+				</div>
 			</div>
-			<div className={`${utilityStyles.grid} ${utilityStyles.gridContent}`}>
-				{
-					category?.articles
-						.map((article, index) => (
-							<Article
-								key={index}
-								title={article.title}
-								link={article.url}
-								image={article.image}
-								date={article.updatedAt}
-								source={ article.source }
-								sourceImage={article.sourceImage}
-							/>
-						))
-				}
-			</div>
+
 		</Layout>
 	)
 }

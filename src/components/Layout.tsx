@@ -15,10 +15,7 @@ const Layout = ({children} : LayoutProps) => {
 			</header>
 			<section className={ contentStyles.container }>
 				<div className={`${contentStyles.mainWrapper} ${utilityStyles.grid} ${utilityStyles.grid} ${utilityStyles.gridMain}`}>
-					<Heading />
-					<div className={`${utilityStyles.grid}`}>
-						{ children }
-					</div>
+					{ children }
 				</div>
 			</section>
 		</main>

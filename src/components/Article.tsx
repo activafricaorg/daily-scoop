@@ -1,9 +1,9 @@
 import Link from "next/link";
+import Image from "next/image";
 import moment from "moment";
 import ArticleStyles from "@/styles/Article.module.scss";
-import Image from "next/image";
 
-interface ArticlePropTypes {
+interface IArticleProp {
 	title: string,
 	link: string,
 	image: string,
@@ -12,9 +12,9 @@ interface ArticlePropTypes {
 	sourceImage: string,
 }
 
-const Article = ({title, link, image, date, source, sourceImage}: ArticlePropTypes) => {
+const Article = ({title, link, image, date, source, sourceImage}: IArticleProp) => {
 	const publisherLogo = sourceImage.split("http").length > 1 ? sourceImage : `${sourceImage}`;
-	const realDate = moment(date).format('YYYY-MM-DD');
+	const realDate = moment(date).format('lll');
 
 	return (
 		<div className={ArticleStyles.singleArticle}>

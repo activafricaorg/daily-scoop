@@ -38,7 +38,7 @@
 }
 
 .meta {
-	font-size: .7rem;
+	font-size: .65rem;
 	font-weight: 500;
 	display: flex;
 	align-items: center;
@@ -47,8 +47,8 @@
 }
 
 .source {
-	font-family: "PolySans", serif;
-	font-style: italic;
+	font-family: "PolySans Slim Mono", serif;
+	// font-style: italic;
 	margin-right: 10px;
 	display: flex;
 	align-items: center;
@@ -59,8 +59,12 @@
 }
 
 .dateTime {
-	color: rgb(148 148 148);
+	// color: rgb(148 148 148);
 	font-family: "PolySans Neutral", serif;
+
+	&:first-letter{
+		text-transform: capitalize
+	}
 }
 
 .sourceImage {

@@ -38,7 +38,6 @@ const Page = ({ category }) => {
 			<div className={`${utilityStyles.grid}`}>
 				<div className={ headingStyles.title }>
 					<h1>{category?.name}</h1>
-					{/*<p>{category?.description}</p>*/}
 				</div>
 				<div className={`${utilityStyles.grid} ${utilityStyles.gridContent}`}>
 					{

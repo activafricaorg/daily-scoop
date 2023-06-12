@@ -13,8 +13,7 @@ interface IArticleProp {
 }
 
 const Article = ({title, link, image, date, source, sourceImage}: IArticleProp) => {
-	const publisherLogo = sourceImage.split("http").length > 1 ? sourceImage : `${sourceImage}`;
-
+	// const publisherLogo = sourceImage.split("http").length > 1 ? sourceImage : `${sourceImage}`;
 	const realDate = moment(date).format("MMM Do");
 
 	return (
@@ -25,7 +24,7 @@ const Article = ({title, link, image, date, source, sourceImage}: IArticleProp) 
 					<h3 className={ArticleStyles.title}>{title}</h3>
 					<div className={ArticleStyles.meta}>
 						<div className={ArticleStyles.source}>
-							<Image className={ArticleStyles.sourceImage} src={publisherLogo} width={20} height={20} alt={source} />
+							<Image className={ArticleStyles.sourceImage} src="https://img.icons8.com/ios/250/FFFFFF/link.png" width={12} height={12} alt={source} />
 							{source}
 						</div>
 						<div className={`dateTime ${ArticleStyles.dateTime}`}>

@@ -1,17 +1,20 @@
 .title {
-	font-family: "PolySans Median", serif;
+	font-family: "PolySans Median Italic", serif;
 	letter-spacing: .01em;
 	min-height: 70px;
 	font-size: 1.25em;
-	line-height: 1.1;
-	margin-bottom: 5px;
+	line-height: 1.2;
+	margin-bottom: 10px;
 	display: -webkit-box;
 	-webkit-line-clamp: 3;
 	-webkit-box-orient: vertical;
 	overflow: hidden;
+	color: white;
+	transition: color 0.3s linear;
 
 	@media (max-width: calc(680px + 1.5rem + 1.5rem - 1px)) {
-		font-size: 1.2em;
+		min-height: 60px;
+		font-size: 1.1em;
 		line-height: 1.15;
 	}
 }
@@ -29,14 +32,14 @@
 	border-radius: 5px;
 	overflow: hidden;
 	border: 1px solid rgb(49 49 49);
-	background-color: transparent;
-	color: white;
+	background-color: #18181a;
 
 	@media (max-width: calc(680px + 1.5rem + 1.5rem - 1px)) {
 		border: none;
 		border-radius: 0;
 		padding: 1rem 0;
 		border-bottom: 1px solid rgb(49 49 49);
+		background-color: transparent;
 	}
 
 	a {
@@ -49,9 +52,11 @@
 
 		&:hover {
 			.title {
-				 text-decoration: underline;
-				 text-decoration-color: var(--theme-color);
-				text-decoration-thickness: 3px;
+				color: #abff96;
+			}
+
+			.meta {
+				opacity: 1;
 			}
 		}
 	}
@@ -66,44 +71,31 @@
 }
 
 .meta {
-	font-family: "PolySans Neutral Mono", serif;
-	font-size: .7rem;
+	font-family: "PolySans Neutral", serif;
+	letter-spacing: .01em;
+	font-size: .75rem;
 	font-weight: 500;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	margin-top: 5px;
+	opacity: 0.6;
+	transition: opacity 0.3s linear;
 }
 
 .source {
-	font-family: "PolySans Median Mono", serif;
 	margin-right: 10px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	border-radius: 20px;
-	color: var(--theme-color);
-	//padding: 3px 9px 3px 3px;
-	//border: 1px solid rgb(49 49 49);
-	padding: 0;
-	border: none;
-
-	img {
-		display: none;
-	}
 }
 
 .dateTime {
-	font-family: "PolySans Neutral Mono", serif;
-	color: var(--theme-grey);
-
 	&:first-letter{
 		text-transform: capitalize;
 	}
 }
 
 .sourceImage {
-	border: 1px solid rgb(49 49 49);
-	border-radius: 20px;
-	margin-right: 5px;
+	margin-right: 3px;
 }

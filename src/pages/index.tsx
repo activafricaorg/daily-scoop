@@ -5,6 +5,7 @@ import Layout from "@/components/Layout";
 import Article from "@/components/Article";
 import Category from "@/components/Category";
 import type { GetStaticProps } from 'next'
+import headingStyles from "@/styles/Heading.module.scss";
 
 export const getStaticProps: GetStaticProps = async () => {
     const res = await fetch(`${process.env.SERVER_HOST}/article`);
@@ -20,6 +21,9 @@ export default function Home({ articles }) {
             </Head>
             <Category currentCategory={undefined} />
             <div className={`${utilityStyles.grid}`}>
+                <div className={ headingStyles.title }>
+                    <h1>Feed</h1>
+                </div>
                 <div className={`${utilityStyles.grid} ${utilityStyles.gridContent}`}>
                     {
                         articles

@@ -1,19 +1,28 @@
 .title {
-	font-family: "PolySans Bulky", serif;
+	font-family: "PolySans Median", serif;
 	letter-spacing: .01em;
 	min-height: 70px;
-	font-size: 1.3em;
+	font-size: 1.25em;
 	line-height: 1.1;
 	margin-bottom: 5px;
 	display: -webkit-box;
 	-webkit-line-clamp: 3;
 	-webkit-box-orient: vertical;
 	overflow: hidden;
+
+	@media (max-width: calc(680px + 1.5rem + 1.5rem - 1px)) {
+		font-size: 1.2em;
+		line-height: 1.15;
+	}
 }
 
 .imagePlaceholder {
 	height: 200px;
 	width: 100%;
+
+	@media (max-width: calc(680px + 1.5rem + 1.5rem - 1px)) {
+		height: 85px;
+	}
 }
 
 .singleArticle {
@@ -23,11 +32,26 @@
 	background-color: transparent;
 	color: white;
 
+	@media (max-width: calc(680px + 1.5rem + 1.5rem - 1px)) {
+		border: none;
+		border-radius: 0;
+		padding: 1rem 0;
+		border-bottom: 1px solid rgb(49 49 49);
+	}
+
 	a {
+		@media (max-width: calc(680px + 1.5rem + 1.5rem - 1px)) {
+			display: grid;
+			grid-template-columns: 100px calc(100% - 100px - 0.5rem);
+			grid-gap: 0.5rem;
+			align-items: center;
+		}
+
 		&:hover {
 			.title {
-				text-decoration: underline;
-				text-decoration-color: var(--theme-color);
+				 text-decoration: underline;
+				 text-decoration-color: var(--theme-color);
+				text-decoration-thickness: 3px;
 			}
 		}
 	}
@@ -35,35 +59,46 @@
 
 .details {
 	padding: 1rem;
+
+	@media (max-width: calc(680px + 1.5rem + 1.5rem - 1px)) {
+		padding: 0 0 0 0.5rem;
+	}
 }
 
 .meta {
-	font-size: .65rem;
+	font-family: "PolySans Neutral Mono", serif;
+	font-size: .7rem;
 	font-weight: 500;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	margin-top: 15px;
+	margin-top: 5px;
 }
 
 .source {
-	font-family: "PolySans Slim Mono", serif;
-	// font-style: italic;
+	font-family: "PolySans Median Mono", serif;
 	margin-right: 10px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	border-radius: 20px;
-	padding: 3px 9px 3px 3px;
-	border: 1px solid rgb(49 49 49);
+	color: var(--theme-color);
+	//padding: 3px 9px 3px 3px;
+	//border: 1px solid rgb(49 49 49);
+	padding: 0;
+	border: none;
+
+	img {
+		display: none;
+	}
 }
 
 .dateTime {
-	// color: rgb(148 148 148);
-	font-family: "PolySans Neutral", serif;
+	font-family: "PolySans Neutral Mono", serif;
+	color: var(--theme-grey);
 
 	&:first-letter{
-		text-transform: capitalize
+		text-transform: capitalize;
 	}
 }
 

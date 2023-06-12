@@ -1,7 +1,5 @@
-import Heading from "@/components/Heading";
-import contentStyles from "@/styles/Category.module.scss";
+import headingStyles from "@/styles/Heading.module.scss";
 import utilityStyles from "@/styles/Utility.module.scss";
-import styles from "@/styles/Home.module.scss";
 
 interface LayoutProps {
 	children: string | JSX.Element | JSX.Element[]
@@ -9,12 +7,12 @@ interface LayoutProps {
 
 const Layout = ({children} : LayoutProps) => {
 	return (
-		<main className={styles.main}>
+		<main>
 			<header>
 				<h1>Daily Scoop</h1>
 			</header>
-			<section className={ contentStyles.container }>
-				<div className={`${contentStyles.mainWrapper} ${utilityStyles.grid} ${utilityStyles.grid} ${utilityStyles.gridMain}`}>
+			<section className={ headingStyles.container }>
+				<div className={`${utilityStyles.grid} ${utilityStyles.grid} ${utilityStyles.gridMain}`}>
 					{ children }
 				</div>
 			</section>

@@ -14,7 +14,8 @@ interface IArticleProp {
 
 const Article = ({title, link, image, date, source, sourceImage}: IArticleProp) => {
 	const publisherLogo = sourceImage.split("http").length > 1 ? sourceImage : `${sourceImage}`;
-	const realDate = moment(date).format('lll');
+
+	const realDate = moment(date).format("MMM Do");
 
 	return (
 		<div className={ArticleStyles.singleArticle}>

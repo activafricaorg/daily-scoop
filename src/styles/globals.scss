@@ -1,9 +1,14 @@
+$content-width: 1200px;
+$tablet-width: 728px;
+
 :root {
   --sp: 1.5rem;
   --dark-theme: #141414;
   --text-color: white;
-  --theme-color: #826eff;
+  --theme-color: #ff652c;
   --theme-grey: #949494;
+  --content-width: 1200px;
+  --tablet-width: 728px;
 }
 
 * {
@@ -24,8 +29,11 @@ html {
   color: var(--text-color);
   background-color: var(--dark-theme);
   padding: var(--sp);
-  -webkit-font-smoothing: subpixel-antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+
+  @media (max-width: calc(680px + 1.5rem + 1.5rem - 1px)) {
+    padding: 0.75rem;
+  }
 }
 
 a {
@@ -35,7 +43,12 @@ a {
 
 main {
   width: 75rem;
+  max-width: var(--content-width);
   margin: 0 auto;
+
+  @media (max-width: calc(1200px + 1.5rem + 1.5rem - 1px)) {
+    width: 100%;
+  }
 }
 
 header {

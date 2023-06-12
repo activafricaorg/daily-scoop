@@ -1,14 +1,13 @@
 import Link from "next/link";
-import React, { useState } from "react";
-import headingStyles from "@/styles/Heading.module.scss";
 import Image from "next/image";
+import React, { useState } from "react";
+import categoryStyles from "@/styles/Category.module.scss";
 
 interface ICategoryProp {
 	currentCategory: string | undefined
 }
 
-const Heading = ({ currentCategory = undefined }: ICategoryProp) => {
-	// const [selectedCategory, setSelectedCategory] = useState("All");
+const Category = ({ currentCategory = undefined }: ICategoryProp) => {
 	const categories = [
 		{ name: "News", slug: "news", image: "https://img.icons8.com/ios/250/FFFFFF/chat.png"},
 		{ name: "Tech", slug: "tech", image: "https://img.icons8.com/ios/250/FFFFFF/rocket.png" },
@@ -17,16 +16,16 @@ const Heading = ({ currentCategory = undefined }: ICategoryProp) => {
 	];
 
 	return (
-		<ul className={`${headingStyles.list}`}>
-			<li className={`${headingStyles.listItem}`}>
-				<Link href={`/`} className={!currentCategory ? headingStyles.active : ''}>
+		<ul className={`${categoryStyles.list}`}>
+			<li className={`${categoryStyles.listItem}`}>
+				<Link href={`/`} className={!currentCategory ? categoryStyles.active : ''}>
 					<Image src="https://img.icons8.com/ios/250/FFFFFF/home.png" alt="Home" width={20} height={20}/>
 					All
 				</Link>
 			</li>
 			{ categories.map((category, index) => (
-				<li key={index} className={`${headingStyles.listItem}`}>
-					<Link href={`/category/${category.slug}`} className={category.slug == currentCategory ? headingStyles.active : ''}>
+				<li key={index} className={`${categoryStyles.listItem}`}>
+					<Link href={`/category/${category.slug}`} className={category.slug == currentCategory ? categoryStyles.active : ''}>
 						<Image src={category.image} alt={category.name} width={20} height={20}/>
 						{category.name}
 					</Link>
@@ -36,4 +35,4 @@ const Heading = ({ currentCategory = undefined }: ICategoryProp) => {
 	)
 }
 
-export default Heading;
+export default Category;

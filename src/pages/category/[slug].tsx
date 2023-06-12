@@ -2,10 +2,11 @@ import React from "react";
 import { GetStaticPaths, GetStaticProps } from "next";
 import utilityStyles from "@/styles/Utility.module.scss";
 import categoryStyles from "@/styles/Category.module.scss";
+import headingStyles from "@/styles/Heading.module.scss";
 import Layout from "@/components/Layout";
 import Head from "next/head";
 import Article from "@/components/Article";
-import Heading from "@/components/Heading";
+import Category from "@/components/Category";
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	return {
@@ -33,11 +34,11 @@ const Page = ({ category }) => {
 				<title>Daily Scoop Africa</title>
 				<meta name="description" content="Daily scoop of entertainment, business, technology, and sport news" />
 			</Head>
-			<Heading currentCategory={category?.slug}/>
+			<Category currentCategory={category?.slug}/>
 			<div className={`${utilityStyles.grid}`}>
-				<div className={ categoryStyles.title }>
+				<div className={ headingStyles.title }>
 					<h1>{category?.name}</h1>
-					<p>{category?.description}</p>
+					{/*<p>{category?.description}</p>*/}
 				</div>
 				<div className={`${utilityStyles.grid} ${utilityStyles.gridContent}`}>
 					{
@@ -48,7 +49,7 @@ const Page = ({ category }) => {
 									title={article.title}
 									link={article.url}
 									image={article.image}
-									date={article.updatedAt}
+									date={article.articleDate}
 									source={ article.source }
 									sourceImage={article.sourceImage}
 								/>

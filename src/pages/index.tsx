@@ -3,7 +3,7 @@ import utilityStyles from "@/styles/Utility.module.scss";
 import Head from 'next/head';
 import Layout from "@/components/Layout";
 import Article from "@/components/Article";
-import Heading from "@/components/Heading";
+import Category from "@/components/Category";
 import type { GetStaticProps } from 'next'
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -18,7 +18,7 @@ export default function Home({ articles }) {
                 <title>Daily Scoop Africa`</title>
                 <meta name="description" content="Daily scoop of entertainment, business, technology, and sport news" />
             </Head>
-            <Heading  currentCategory={undefined} />
+            <Category currentCategory={undefined} />
             <div className={`${utilityStyles.grid}`}>
                 <div className={`${utilityStyles.grid} ${utilityStyles.gridContent}`}>
                     {

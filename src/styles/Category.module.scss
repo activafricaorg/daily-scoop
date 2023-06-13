@@ -8,6 +8,10 @@
 		display: flex;
 		align-items: center;
 	}
+
+	@media (max-width: calc(680px + 1.5rem + 1.5rem - 1px)) {
+		display: none;
+	}
 }
 
 .listItem {

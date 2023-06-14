@@ -1,4 +1,4 @@
-export type TArticle = {
+export type ArticleTypes = {
 	title: string,
 	url: string,
 	image: string,

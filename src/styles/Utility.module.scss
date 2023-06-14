@@ -24,12 +24,12 @@
 		grid-gap: 30px;
 	}
 
-	//&Main {
-	//	grid-template-columns: 250px calc(100% - 250px - 1.5rem);
-	//	grid-gap: 1.5rem;
-	//
-	//	@media (max-width: calc(1200px + 1.5rem + 1.5rem - 1px)) {
-	//		display: block;
-	//	}
-	//}
+	&Main {
+		grid-template-columns: repeat(3, 1fr);
+		grid-gap: 3rem;
+
+		//@media (max-width: calc(1200px + 1.5rem + 1.5rem - 1px)) {
+		//	display: block;
+		//}
+	}
 }

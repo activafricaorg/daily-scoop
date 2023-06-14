@@ -1,13 +1,14 @@
-import {TPublisher} from "@/types/publisher";
-import {TArticle} from "@/types/article";
+import {PublisherTypes} from "@/types/publisher";
+import {ArticleTypes} from "@/types/article";
 
-export type TCategory = {
+export type CategoryTypes = {
 	name: string,
 	slug: string,
 	description: string,
-	publishers: TPublisher[],
+	image: string,
+	publishers: PublisherTypes[],
 }
 
-export interface ICategoryArticles extends TCategory {
-	articles: TArticle[]
+export type CategoryArticlesTypes = CategoryTypes & {
+	articles: ArticleTypes[]
 }

@@ -3,15 +3,15 @@ import utilityStyles from "@/styles/Utility.module.scss";
 import Head from 'next/head';
 import Layout from "@/components/Layout";
 import Section from "@/components/Section";
-import type { GetStaticProps } from "next";
-import {ICategoryArticles} from "@/types/category";
+import type {GetStaticProps} from "next";
+import {CategoryArticlesTypes} from "@/types/category";
 
 export const getStaticProps: GetStaticProps = async () => {
     const res = await fetch(`${process.env.SERVER_HOST}/article`);
-    const categories: ICategoryArticles[] = await res.json();
+    const categories: CategoryArticlesTypes[] = await res.json();
     return {props: {categories}}
 }
-export default function Home(props: {categories: ICategoryArticles[]}) {
+const Home = (props: {categories: CategoryArticlesTypes[]}) => {
     return (
         <Layout>
             <Head>
@@ -21,7 +21,7 @@ export default function Home(props: {categories: ICategoryArticles[]}) {
             <>
                 {
                     props.categories
-                        .map((category: ICategoryArticles, index: number) => (
+                        .map((category: CategoryArticlesTypes, index: number) => (
                             <Section key={index} category={category} />
                         ))
                 }
@@ -29,3 +29,5 @@ export default function Home(props: {categories: ICategoryArticles[]}) {
         </Layout>
     )
 }
+
+export default Home;

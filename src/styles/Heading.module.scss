@@ -1,27 +1,21 @@
 .container {
-	margin: 2rem 0;
+	margin: 6rem 0;
 }
 
 .title {
 	margin-bottom: 30px;
+	padding-bottom: 20px;
+	font-family: "PolySans Bulky Italic", serif;
+	text-transform: capitalize;
+	letter-spacing: .01em;
+	line-height: 1;
+	font-size: 4em;
+	border-bottom: 2px solid rgb(72, 72, 72);
+	display: flex;
+	align-items: center;
 
-	@media (max-width: calc(680px + 1.5rem + 1.5rem - 1px)) {
-		margin-bottom: 0;
-	}
-
-	h1 {
-		font-family: "PolySans Bulky Italic", serif;
-		text-transform: capitalize;
-		letter-spacing: .01em;
-		line-height: 1;
-		font-size: 4em;
-		text-align: right;
-		margin: 0 0 5px;
-
-		@media (max-width: calc(680px + 1.5rem + 1.5rem - 1px)) {
-			margin: 0 0 10px;
-			font-size: 2.2em;
-		}
+	img {
+		margin-right: 20px;
 	}
 
 	p {

@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import headingStyles from "@/styles/Heading.module.scss";
-import utilityStyles from "@/styles/Utility.module.scss";
 import Category from "@/components/Category";
 
 const Layout = (props: {children: string | JSX.Element | JSX.Element[]}) => {
@@ -16,7 +15,7 @@ const Layout = (props: {children: string | JSX.Element | JSX.Element[]}) => {
 			</div>
 			<nav className={headingStyles.mainMenu}>
 				<div className={headingStyles.mainMenuWrapper}>
-					<Category  currentCategory={undefined}/>
+					<Category currentCategory={undefined}/>
 					<ul className={headingStyles.secondaryMenu}>
 						<li className={headingStyles.mainMenuItem}><Link href="/about">About</Link></li>
 						<li className={headingStyles.mainMenuItem}><Link href="/contribute">Contribute</Link></li>

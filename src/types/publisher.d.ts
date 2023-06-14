@@ -1,11 +1,11 @@
-import {TArticle} from "@/types/article";
+import {ArticleTypes} from "@/types/article";
 
-export type TPublisher = {
+export type PublisherTypes = {
 	name: string,
 	url: string,
 	image: string
 }
 
-export interface TPublisherArticles extends TPublisher {
-	articles: TArticle[]
+export interface IPublisherArticles extends PublisherTypes {
+	articles: ArticleTypes[]
 }

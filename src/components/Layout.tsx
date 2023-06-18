@@ -7,7 +7,7 @@ const Layout = (props: {children: string | JSX.Element | JSX.Element[]}) => {
 	return (
 		<main>
 			<header>
-				<Image className="logo" src="/images/daily-scoop-logo.png" width={150} height={67} alt="Daily Scoop Africa" />
+				<Image className="logo" src="/images/daily-scoop-logo.png" width={113} height={40} alt="Daily Scoop Africa" />
 				<div className={headingStyles.menuTrigger}>MENU</div>
 			</header>
 			<div className={headingStyles.container}>

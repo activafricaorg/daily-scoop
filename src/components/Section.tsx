@@ -11,7 +11,7 @@ const Section = (props: {key: number, category: CategoryArticlesTypes}) => {
 	return (
 		<section className={`${HeadingStyles.container}`}>
 			<h2 className={HeadingStyles.title}>
-				<Image src={props.category.image} alt={props.category.name} width={50} height={50} />
+				{/*<Image src={props.category.image} alt={props.category.name} width={50} height={50} />*/}
 				{props.category.name}
 			</h2>
 			<div className={`${UtilityStyles.grid} ${UtilityStyles.gridMain}`}>

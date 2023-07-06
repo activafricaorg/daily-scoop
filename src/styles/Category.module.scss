@@ -1,19 +1,3 @@
-.list {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-
-	@media (max-width: calc(1200px + 1.5rem + 1.5rem - 1px)) {
-		margin-bottom: 3rem;
-		display: flex;
-		align-items: center;
-	}
-
-	@media (max-width: calc(680px + 1.5rem + 1.5rem - 1px)) {
-		display: none;
-	}
-}
-
 .listItem {
 	padding: 7px 0;
 	font-size: 1.15em;

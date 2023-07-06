@@ -1,42 +1,19 @@
 .title {
-	font-family: "PolySans Bulky", serif;
+	font-family: "PolySans Neutral", serif;
 	letter-spacing: .01em;
-	min-height: 70px;
-	font-size: 1.5em;
-	line-height: 1.15;
+	font-size: 1.2em;
+	line-height: 1.2;
 	margin: 5px 0 10px;
-	display: -webkit-box;
-	-webkit-line-clamp: 3;
-	-webkit-box-orient: vertical;
-	overflow: hidden;
 	color: white;
 	transition: color 0.3s linear;
-
-	@media (max-width: calc(680px + 1.5rem + 1.5rem - 1px)) {
-		min-height: 60px;
-		font-size: 1.1em;
-		line-height: 1.15;
-	}
-}
-
-.imagePlaceholder {
-	height: 200px;
-	width: 100%;
-
-	@media (max-width: calc(680px + 1.5rem + 1.5rem - 1px)) {
-		height: 85px;
-	}
 }
 
 .singleArticle {
-	a {
-		@media (max-width: calc(680px + 1.5rem + 1.5rem - 1px)) {
-			display: grid;
-			grid-template-columns: 100px calc(100% - 100px - 0.5rem);
-			grid-gap: 0.5rem;
-			align-items: center;
-		}
+	padding: 1.25rem;
+	border-bottom: 1px solid rgb(72, 72, 72);
+	border-left: 1px solid rgb(72, 72, 72);
 
+	a {
 		&:hover {
 			.title {
 				color: #abff96;
@@ -49,24 +26,33 @@
 	}
 }
 
-.details {
-	padding: 1rem 0;
-
-	@media (max-width: calc(680px + 1.5rem + 1.5rem - 1px)) {
-		padding: 0 0 0 0.5rem;
-	}
-}
+.details {}
 
 .source {
-	font-size: 0.9em;
 	color: #fdc006;
-	font-family: "PolySans Median", serif;
 	letter-spacing: .01em;
+	display: inline-block;
 }
 
 .dateTime {
-	font-size: 0.9em;
+	font-size: 0.75em;
+	font-family: "PolySans Median", serif;
 	color: #a2a2a2;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	span {
+		width: 2px;
+		height: 2px;
+		border-radius: 50%;
+		background-color: white;
+	}
+
+	svg {
+		width: 12px;
+		height: 12px;
+	}
 }
 
 .sourceImage {

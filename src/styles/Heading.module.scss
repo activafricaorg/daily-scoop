@@ -1,16 +1,19 @@
 .container {
 	margin: 6rem 0;
+	grid-template-columns: repeat(4,minmax(0,1fr));
 }
 
 .title {
-	margin-bottom: 30px;
-	padding-bottom: 20px;
-	font-family: "PolySans Bulky Italic", serif;
+	margin-bottom: 0;
+	padding: 10px 20px;
+	font-family: "PolySans Median", serif;
 	text-transform: capitalize;
 	letter-spacing: .01em;
 	line-height: 1;
-	font-size: 3em;
-	border-bottom: 2px solid rgb(72, 72, 72);
+	font-size: 1.5em;
+	border-left: 1px solid rgb(72, 72, 72);
+	border-top: 1px solid rgb(72, 72, 72);
+	border-bottom: 1px solid rgb(72, 72, 72);
 	display: flex;
 	align-items: center;
 

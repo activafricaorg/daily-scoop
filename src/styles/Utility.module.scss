@@ -5,31 +5,10 @@
 		grid-template-columns: repeat(3, 1fr);
 		grid-gap: calc(0.5rem * 2 + 1px);
 		border-radius: 0 5px 5px 5px;
-
-		@media (max-width: calc(960px + 1.5rem + 1.5rem - 1px)) {
-			grid-template-columns: repeat(2, 1fr);
-		}
-
-		@media (max-width: calc(680px + 1.5rem + 1.5rem - 1px)) {
-			grid-template-columns: repeat(1, 1fr);
-		}
-
-		@media (max-width: calc(680px + 1.5rem + 1.5rem - 1px)) {
-			grid-gap: 0;
-		}
 	}
 
 	&Category {
 		grid-template-columns: minmax(8rem, 1fr) 3fr;
 		grid-gap: 30px;
-	}
-
-	&Main {
-		grid-template-columns: repeat(3, 1fr);
-		grid-gap: 3rem;
-
-		//@media (max-width: calc(1200px + 1.5rem + 1.5rem - 1px)) {
-		//	display: block;
-		//}
 	}
 }

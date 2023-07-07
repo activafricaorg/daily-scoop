@@ -1,0 +1,36 @@
+.container {
+	margin: 4rem 0;
+	grid-template-columns: repeat(4,minmax(0,1fr));
+
+	section {
+		border-left: 1px solid rgb(47, 51, 54);
+
+		&:last-of-type {
+			border-right: 1px solid rgb(47, 51, 54);
+		}
+
+		& > div {
+			border-bottom: 1px solid rgb(47, 51, 54);
+			max-height: 1100px;
+			overflow-x: hidden;
+		}
+	}
+}
+
+.title {
+	margin-bottom: 0;
+	padding: 10px 20px;
+	font-family: "PolySans Median", serif;
+	text-transform: capitalize;
+	letter-spacing: .01em;
+	line-height: 1;
+	font-size: 1.5em;
+	border-top: 1px solid rgb(47, 51, 54);
+	border-bottom: 1px solid rgb(47, 51, 54);
+	display: flex;
+	align-items: center;
+
+	img {
+		margin-right: 10px;
+	}
+}

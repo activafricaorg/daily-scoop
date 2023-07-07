@@ -52,13 +52,30 @@ main {
 }
 
 header {
-  //margin-bottom: 10px;
-  //padding-bottom: 20px;
   padding: 0.5rem 0 1rem 0;
   border-bottom: 2px solid rgb(56, 56, 56);
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.container {
+  margin: 4rem 0;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+
+  section {
+    border-left: 1px solid rgb(47, 51, 54);
+
+    &:last-of-type {
+      border-right: 1px solid rgb(47, 51, 54);
+    }
+
+    & > div {
+      border-bottom: 1px solid rgb(47, 51, 54);
+      max-height: 1100px;
+      overflow-x: hidden;
+    }
+  }
 }
 
 h1, h2 {

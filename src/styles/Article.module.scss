@@ -10,23 +10,24 @@
 
 .singleArticle {
 	padding: 1.25rem;
-	border-bottom: 1px solid rgb(72, 72, 72);
-	border-left: 1px solid rgb(72, 72, 72);
+	border-bottom: 1px solid rgb(47, 51, 54);
+
+	&:last-of-type {
+		border-bottom: none;
+	}
+
+	h3 {
+		margin-top: 0;
+	}
 
 	a {
 		&:hover {
 			.title {
 				color: #abff96;
 			}
-
-			.meta {
-				opacity: 1;
-			}
 		}
 	}
 }
-
-.details {}
 
 .source {
 	color: #fdc006;

@@ -4,6 +4,7 @@ import { ArticleTypes } from "@/types/article";
 import SectionStyles from "@/styles/Section.module.scss";
 import UtilityStyles from "@/styles/Utility.module.scss";
 import Article from "@/components/Article";
+import Link from "next/link";
 
 const Section = (props: {key: number, category: CategoryArticlesTypes}) => {
 	const articles: ArticleTypes[] = props.category.articles;
@@ -21,6 +22,9 @@ const Section = (props: {key: number, category: CategoryArticlesTypes}) => {
 						})
 				}
 			</div>
+			<Link href={`/category/${props.category.slug}`} className={SectionStyles.moreLink}>
+				More {props.category.name}
+			</Link>
 		</section>
 	)
 }

@@ -1,18 +1,23 @@
 .container {
 	margin: 4rem 0;
 	grid-template-columns: repeat(4,minmax(0,1fr));
+	grid-gap: 10px;
 
 	section {
 		border-left: 1px solid rgb(47, 51, 54);
-
-		&:last-of-type {
-			border-right: 1px solid rgb(47, 51, 54);
-		}
+		border-right: 1px solid rgb(47, 51, 54);
+		position: relative;
 
 		& > div {
 			border-bottom: 1px solid rgb(47, 51, 54);
 			max-height: 1100px;
 			overflow-x: hidden;
+			-ms-overflow-style: none;  /* IE and Edge */
+			scrollbar-width: none;  /* Firefox */
+
+			&::-webkit-scrollbar {
+				display: none;
+			}
 		}
 	}
 }
@@ -33,4 +38,16 @@
 	img {
 		margin-right: 10px;
 	}
+}
+
+.moreLink {
+	background-color: var(--link-color);;
+	color: black;
+	position: absolute;
+	height: 40px;
+	width: 100%;
+	padding: 10px 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
 }

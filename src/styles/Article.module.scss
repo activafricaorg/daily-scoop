@@ -2,10 +2,10 @@
 	font-family: "PolySans Neutral", serif;
 	letter-spacing: .01em;
 	font-size: 1.2em;
-	line-height: 1.2;
+	line-height: 1.15;
 	margin: 5px 0 10px;
 	color: white;
-	transition: color 0.3s linear;
+	transition: color 0.15s linear;
 }
 
 .singleArticle {
@@ -23,14 +23,14 @@
 	a {
 		&:hover {
 			.title {
-				color: #abff96;
+				color: var(--theme-color);
 			}
 		}
 	}
 }
 
 .source {
-	color: #fdc006;
+	color: var(--link-color);
 	letter-spacing: .01em;
 	display: inline-block;
 }

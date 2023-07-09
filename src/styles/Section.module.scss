@@ -1,7 +1,5 @@
 .container {
 	margin: 4rem 0;
-	grid-template-columns: repeat(4,minmax(0,1fr));
-	grid-gap: 10px;
 
 	section {
 		border-left: 1px solid rgb(47, 51, 54);

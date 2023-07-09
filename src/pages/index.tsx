@@ -2,9 +2,9 @@ import React from "react";
 import Head from 'next/head';
 import Layout from "@/components/Layout";
 import Section from "@/components/Section";
+import type { GetStaticProps } from "next";
 import SectionStyles from "@/styles/Section.module.scss";
 import UtilityStyles from "@/styles/Utility.module.scss";
-import type { GetStaticProps } from "next";
 import { CategoryArticlesTypes } from "@/types/category";
 import Link from "next/link";
 
@@ -24,7 +24,7 @@ const Home = (props: {categories: CategoryArticlesTypes[]}) => {
                 <div className="mainHeading">
                     <h2>Daily Scoop Africa helps you to track news, insights, and events from <Link href="/">multiple sources</Link> across Africa.</h2>
                 </div>
-                <div className={`${SectionStyles.container} ${UtilityStyles.grid}`}>
+                <div className={`${SectionStyles.container} ${UtilityStyles.grid} ${UtilityStyles.gridContent}`}>
                     {
                         props.categories
                             .map((category: CategoryArticlesTypes, index: number) => (

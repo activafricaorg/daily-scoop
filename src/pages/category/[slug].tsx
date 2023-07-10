@@ -6,8 +6,8 @@ import UtilityStyles from "@/styles/Utility.module.scss";
 import Head from "next/head";
 import Layout from "@/components/Layout";
 import Article from "@/components/Article";
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import Link from "next/link";
-import category from "@/components/Category";
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	return {
@@ -18,7 +18,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 				},
 			},
 		],
-		fallback: true,
+		fallback: 'blocking',
 	}
 }
 
@@ -29,7 +29,6 @@ export const getStaticProps: GetStaticProps = async({ params }) => {
 }
 
 const Page = (props: {category: CategoryArticlesTypes}) => {
-	console.log(props);
 	const articles: ArticleTypes[] = props.category.articles;
 
 	return (
@@ -42,13 +41,17 @@ const Page = (props: {category: CategoryArticlesTypes}) => {
 				<div className="mainHeading">
 					<h2>{props.category.name} articles from <Link href="/">multiple sources</Link> across Africa.</h2>
 				</div>
-				<div className={`${UtilityStyles.grid} ${UtilityStyles.grid} ${UtilityStyles.gridCategory}`}>
-					{
-						articles
-							.map((article: ArticleTypes, index) => {
-								return <Article key={index} data={article} />
-							})
-					}
+				<div className={`${UtilityStyles.grid}`}>
+					<ResponsiveMasonry columnsCountBreakPoints={{350: 1, 750: 2, 900: 4}} >
+						<Masonry gutter={"10px"}>
+							{
+								articles
+									.map((article: ArticleTypes, index) => {
+										return <Article isCategory={true} key={index} data={article} />
+									})
+							}
+						</Masonry>
+					</ResponsiveMasonry>
 				</div>
 			</section>
 		</Layout>

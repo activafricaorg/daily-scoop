@@ -11,7 +11,7 @@ const Layout = (props: {children: string | JSX.Element | JSX.Element[]}) => {
 			<footer>
 				<ul>
 					<li><Link href="https://activ.africa">Activ</Link></li>
-					<li><Link href="/about">News Sources</Link></li>
+					<li><Link href="/sources">News Sources</Link></li>
 					<li><Link href="/about">About</Link></li>
 					<li><Link href="/privacy">Privacy</Link></li>
 					<li><Link href="/terms">Terms</Link></li>

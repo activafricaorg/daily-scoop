@@ -29,6 +29,14 @@
 	}
 }
 
+.categoryArticle {
+	border: 1px solid rgb(47, 51, 54);
+
+	&:last-of-type {
+		border-bottom: 1px solid rgb(47, 51, 54);
+	}
+}
+
 .source {
 	color: var(--link-color);
 	letter-spacing: .01em;

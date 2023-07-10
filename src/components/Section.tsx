@@ -1,10 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
 import { CategoryArticlesTypes } from "@/types/category";
 import { ArticleTypes } from "@/types/article";
 import SectionStyles from "@/styles/Section.module.scss";
 import UtilityStyles from "@/styles/Utility.module.scss";
 import Article from "@/components/Article";
-import Link from "next/link";
 
 const Section = (props: {key: number, category: CategoryArticlesTypes}) => {
 	const articles: ArticleTypes[] = props.category.articles;
@@ -18,7 +18,7 @@ const Section = (props: {key: number, category: CategoryArticlesTypes}) => {
 				{
 					articles
 						.map((article: ArticleTypes, index) => {
-							return <Article key={index} data={article} />
+							return <Article isCategory={false} key={index} data={article} />
 						})
 				}
 			</div>

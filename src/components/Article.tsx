@@ -3,7 +3,7 @@ import moment from "moment";
 import ArticleStyles from "@/styles/Article.module.scss";
 import { ArticleTypes } from "@/types/article";
 
-const Article = (props: { key: number, data: ArticleTypes }) => {
+const Article = (props: { isCategory: boolean, key: number, data: ArticleTypes }) => {
 	const realDate = moment(props.data.articleDate).format('lll');
 	let title = (props.data.title).split("|").length > 1 ? (props.data.title).split("|")[0] : (props.data.title);
 	title = title.split(" --").length > 1 ? title.split(" --")[0] : title;
@@ -11,7 +11,7 @@ const Article = (props: { key: number, data: ArticleTypes }) => {
 	title = title.split(" –—").length > 1 ? title.split(" –—")[0] : title;
 
 	return (
-		<div className={ArticleStyles.singleArticle}>
+		<div className={`${ArticleStyles.singleArticle} ${props.isCategory ? ArticleStyles.categoryArticle : null}`}>
 			<Link href={props.data.url} target="_blank">
 				<h3 className={ArticleStyles.title}>{title}</h3>
 			</Link>

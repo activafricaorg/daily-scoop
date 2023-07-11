@@ -26,7 +26,7 @@ body {
 }
 
 html {
-  font: 100%/1.5 "PolySans Neutral", serif;
+  font: 100%/1.5 "PolySans Neutral", sans-serif;
   color: var(--text-color);
   background-color: var(--dark-theme);
   padding: var(--sp);
@@ -58,17 +58,32 @@ h1, h2 {
 }
 
 .mainHeading {
-  margin: 4rem 0;
+  margin: 4rem 0 2rem;
   width: 50%;
 
   h2 {
-    font-family: "PolySans Median", serif;
+    font-family: "PolySans Median", sans-serif;
     font-size: 2.2rem;
     line-height: 1.15em;
   }
 
   a {
     color: var(--link-color);
+  }
+}
+
+.contentSection {
+  margin-top: 4rem;
+
+  h3 {
+    font-size: 1.65em;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 1.2em;
+    line-height: 1.3em;
+    font-family: "PolySans Slim", sans-serif;
   }
 }
 

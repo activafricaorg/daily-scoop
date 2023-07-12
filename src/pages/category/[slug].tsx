@@ -23,6 +23,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async({ params }) => {
+	console.log(params);
 	const res = await fetch(`${process.env.SERVER_HOST}/category/${params?.slug}`);
 	const category: CategoryArticlesTypes = await res.json();
 	return {props: { category }}

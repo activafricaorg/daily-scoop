@@ -1,5 +1,5 @@
-import {PublisherTypes} from "@/types/publisher";
-import {ArticleTypes} from "@/types/article";
+import { PublisherTypes } from "@/types/publisher";
+import { ArticleTypes } from "@/types/article";
 
 export type CategoryTypes = {
 	name: string,

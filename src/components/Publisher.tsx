@@ -13,7 +13,7 @@ const Publisher = (props: { key: number, data: PublisherTypes }) => {
 				<h3 className={ArticleStyles.title}>{props.data.name}</h3>
 			</Link>
 			<div className={`dateTime ${ArticleStyles.dateTime}`}>
-				<div className={ArticleStyles.source}>{url}</div>
+				<Link href={`https://${props.data.url}`} target="_blank" className={ArticleStyles.source}>{url}</Link>
 			</div>
 		</div>
 	)

@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from "next";
-import { CategoryArticlesTypes } from "@/types/category";
 import { ArticleTypes } from "@/types/article";
+import { IPublisherArticles } from "@/types/publisher";
 import UtilityStyles from "@/styles/Utility.module.scss";
 import Head from "next/head";
 import Layout from "@/components/Layout";
@@ -23,30 +23,34 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async({ params }) => {
 	let slug = params?.slug;
+	if (slug && typeof slug == "string") {
+		slug = slug.split("-");
+		if (slug.length > 1) slug = slug.join("+");
 
-	const res = await fetch(`${process.env.SERVER_HOST}/category/${params?.slug}`);
-	const category: CategoryArticlesTypes = await res.json();
-	return {props: { category }}
+		const res = await fetch(`${process.env.SERVER_HOST}/publisher?search=${slug}`);
+		const publisher: IPublisherArticles[] = await res.json();
+		return {props: { publisher }}
+	}
+
+	return { notFound: true }
 }
 
-const Page = (props: {category: CategoryArticlesTypes}) => {
-	const articles: ArticleTypes[] = props.category.articles;
-
+const Page = (props: { publisher: IPublisherArticles[] }) => {
 	return (
 		<Layout>
 			<Head>
-				<title>{props.category.name} | Daily Scoop Africa</title>
+				<title>{ props.publisher[0].name } | Daily Scoop Africa</title>
 				<meta name="description" content="Daily scoop of entertainment, business, technology, and sport news" />
 			</Head>
 			<section>
 				<div className="mainHeading">
-					<h2>{props.category.name} articles from <Link href="/">multiple sources</Link> across Africa.</h2>
+					<h2>Most recent articles from <Link target="_blank" href={ `https://${props.publisher[0].url}` }>{ props.publisher[0].name }</Link>.</h2>
 				</div>
 				<div className={`${UtilityStyles.grid}`}>
 					<ResponsiveMasonry columnsCountBreakPoints={{350: 1, 750: 2, 900: 4}} >
 						<Masonry gutter={"10px"}>
 							{
-								articles
+								props.publisher[0].articles
 									.map((article: ArticleTypes, index) => {
 										return <Article isCategory={true} key={index} data={article} />
 									})
